@@ -16,6 +16,8 @@ test.beforeEach(({ page }) => {
     helpers = new Helpers(page);
 });
 
+
+
 test('TC-3: Registro de estudiante (Sign up)', { tag: '@smoke' }, async () => {
     const email = `estudiante${Date.now()}@automation.com`;
     await paginaHome.navegarAHome();
@@ -24,6 +26,6 @@ test('TC-3: Registro de estudiante (Sign up)', { tag: '@smoke' }, async () => {
     // Verificar que el registro fue exitoso
     // Verificar que el request a /api/students/register de tipo post devuelva un 201 antes de continuar
     await helpers.esperarPorRespuestaAPI('/api/students/register', 'POST', 201);
-    await helpers.verificarTextoVisible('¡Tu cuenta está lista!');
+    await helpers.verificarTextoVisible('Verifica tu email');
     await expect(paginaRegistro.buttonIrAIniciarSesion).toBeVisible();
 });

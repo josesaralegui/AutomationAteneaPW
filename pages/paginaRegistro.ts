@@ -35,7 +35,7 @@ export class PaginaRegistro {
         this.buttonShowConfirmPassword = page
             .getByRole('button', { name: 'Mostrar contraseña' })
             .last();
-        this.buttonIrAIniciarSesion = page.getByRole('button', { name: 'Ir a iniciar sesión' });
+        this.buttonIrAIniciarSesion = page.getByRole('link', { name: 'Volver a iniciar sesión' });
     }
 
     async ingresarNombre(nombre: string) {
