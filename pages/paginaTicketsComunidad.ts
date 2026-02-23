@@ -28,9 +28,7 @@ export class PaginaTicketsComunidad {
         this.chipsEstado = page
             .locator('span.MuiChip-label')
             .filter({ hasText: /Aceptado|En progreso|Resuelto/i });
-        this.chipsPrioridad = page
-            .locator('span.MuiChip-label')
-            .filter({ hasText: /Prioridad:/i });
+        this.chipsPrioridad = page.locator('span.MuiChip-label').filter({ hasText: /Prioridad:/i });
         this.alertasDeError = page.getByRole('alert').filter({
             hasText: /error|fallo|fall\u00f3|ocurri\u00f3/i,
         });
